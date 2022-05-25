@@ -14,8 +14,7 @@ class BlogViewList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(
             author=self.request.user,
-            date=datetime.datetime.now(),
-            liked=0)
+            date=datetime.datetime.now())
 
 
 class BlogViewDetail(generics.RetrieveUpdateDestroyAPIView):
